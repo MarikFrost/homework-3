@@ -10,21 +10,19 @@ size_t lib_strlen(char *count_string) {
     return i;
 }
 
+void compare(char * lib_string, char * string) {
+    if (strlen(string) == lib_strlen(lib_string)){
+        printf ("Функции одинаковые\n");
+    }else {
+        printf("Ошибка\n");
+    }
+}
+
+
 
 int main() {
-    char *string = "Hello word";
-    printf("Длина строки через strlen: %ld\n", strlen(string));
-
-
-    printf("\nДлина строки через lib_strlen: %ld\n", lib_strlen(string));
-
-
-    if(strlen(string) == lib_strlen(string)){
-        printf("\nРезультат функции strlen и lib_strlen идентичен\n");
-    }else {
-        printf("\nРезультат функций отличается\n");
-    }
-
-
+    char * lib_string = "Hello word";
+    char * string = "Hello word";
+    compare(lib_string, string);
     return 0;
 }
