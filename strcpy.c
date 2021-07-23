@@ -1,35 +1,46 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-char * lib_strcpy( char * null_string, char * string) {                                    
-  int i = 0;
-  while (string[i])                            
-    {
-      null_string[i] = string[i];                               
-      i++;                                                 
-    }
-  return null_string;
+
+/* Написаная функция lib_strcpy, берет строку и копирует ее*/
+char * lib_strcpy(char * str, char * str1){
+    int i = 0;
+    while (str1[i]) {
+       str[i] = str1[i];
+        i++;
+    } 
+    return str;
 }
 
 
 
-int main() {
-  char * a = "Hello word";
-  char b['0'];
-  
-  char *old = strcpy(b, a);         //функция strcpy
-  printf("Вывод функции strcpy\n");
-  printf("%s\n", old);
+ /*Функция сравнивает выполнение lib_strcpy и strpcy */
+int compare (char * new_string, char * old_string, char * string){
+    int i = 0;
+    char * a = strcpy(new_string, string);
+    char * b = lib_strcpy(old_string, string);
+    while (a[i]){
+        if (a[i] != b[i]) {
+            printf("Ошибка\n");
+            return 0;
+        }
+        i++;
+    }
+    printf("Функции одинаковые\n");
+}
 
-  char *new = lib_strcpy (b, a);     //функция lib_strcpy
-  printf("\nВывод функции lib_strcpy:\n%s\n", new);
 
-  if (old == new) {                   // сравнение результатов двух функций
-    printf("\nСравнение strcpy и lib_strcpy прошло успешно\n");
-  } else {
-    printf("Сравнение закончилось ошибкой");
-  }
 
+int main(){
+    char * string = "Hello word";                           //строка
+    char *strcpy_string = malloc(sizeof(int));              // память под strcpy
+    char *Lib_strcpy_string = malloc(sizeof(int));          // память под lib_strcpy
+
+    compare(strcpy_string, Lib_strcpy_string, string);     // Вызываем функцию стравнивания
+
+    free(strcpy_string);     //освобождаем память
+    free(Lib_strcpy_string);  // освобождаем память
   return 0;
 }
