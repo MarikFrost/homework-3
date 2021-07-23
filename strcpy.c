@@ -11,6 +11,7 @@ char * lib_strcpy(char * str, char * str1){
        str[i] = str1[i];
         i++;
     } 
+    str[i] = '\0';
     return str;
 }
 
