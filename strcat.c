@@ -1,44 +1,58 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 
+/* Написаная функция strcat, берет строку и копирует ее*/
+char * lib_strcat(char * string_first, char * string_second){
+  char *result = malloc(strlen(string_first) + strlen(string_second) + 1);
+  int i = 0;
+  while(string_first[i]) {
+    result[i] = string_first[i];
+    i++;
+  }
+  int a = 0;
+  while(string_second[a]) {
+    result[i] = string_second[a];
+    a++;
+    i++;
+  }
+  result[i] = '\0';
+  return result;
+  free(result);
+}
 
-char *lib_strcat(char *first, const char *second) {
+
+ /*Функция сравнивает выполнение lib_strcat и strcat */
+void compare (char * first_string, char * second_string){
     int i = 0;
-    int b = 0;
-      while (second[i]){
-        while(first[b]){
-          b++;
+    char * a = malloc(strlen(first_string) + strlen(second_string) + 1);
+
+    strcat(strcpy(a, first_string), second_string);
+    char * b = lib_strcat(first_string, second_string);
+
+    while (a[i]){
+        if (a[i] != b[i]) {
+            printf("Ошибка, результат отличается\n");
+            return 0;
         }
-        first[b] = second[i];
-        i++;   
+        i++;
     }
-    return first;
+    printf("Функции одинаковые\n");
+    free(a);
 }
 
 
 
-int main() {
-    char str[1024] = "Hello word";
-    char str1[1024] = "And you hello";
-
-
-   /*printf("Функция lib_strcat выводит значение: %s\n", lib_strcat(str, str1));
-   printf("Функция strcat выводит значение: %s\n", strcat (str, str1));*/
-  // Не могу понять, почему по отдельности каждая функция работает правильно. Но когда запускаешь вместе результат не одинаковый
-
-
-  
+int main(){
+  char * string_first = "Hello word ";
+  char * string_second = "And you hello human";  
     
-
-   if (strcat (str, str1) == lib_strcat(str, str1)) {
-      printf("Сравнение успешно\n");
-    } else {
-      printf("ошибка\n");
-    }
-
-
+//  printf("%s\n", strcpy(strcpy_string, string_first));
+  //printf("%s\n", strcat(strcpy(strcpy_string, string_first), string_second));
+ // printf("%s\n", strcpy_string);
+compare(string_first,string_second);
 
 
   return 0;
