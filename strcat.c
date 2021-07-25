@@ -25,7 +25,7 @@ char * lib_strcat(char * string_first, char * string_second){
 
 
  /*Функция сравнивает выполнение lib_strcat и strcat */
-void compare (char * first_string, char * second_string){
+int compare (char * first_string, char * second_string){
     int i = 0;
     char * a = malloc(strlen(first_string) + strlen(second_string) + 1);
 
@@ -47,13 +47,9 @@ void compare (char * first_string, char * second_string){
 
 int main(){
   char * string_first = "Hello word ";
-  char * string_second = "And you hello human";  
-    
-//  printf("%s\n", strcpy(strcpy_string, string_first));
-  //printf("%s\n", strcat(strcpy(strcpy_string, string_first), string_second));
- // printf("%s\n", strcpy_string);
-compare(string_first,string_second);
+  char * string_second = "And you hello human";   
 
+  compare(string_first,string_second);
 
   return 0;
 }
