@@ -12,7 +12,10 @@ size_t lib_strlen(char *count_string) {
 
 void compare(char * lib_string, char * string) {
     if (strlen(string) == lib_strlen(lib_string)){
-        printf ("Функции одинаковые\n");
+        printf ("Результат Функций одинаковый\n");
+        printf("Результат srtlen: %ld\n", strlen(string));
+        printf("Результат lib_srtlen: %ld\n", lib_strlen(string));
+
     }else {
         printf("Ошибка\n");
     }
