@@ -15,7 +15,7 @@ int lib_isalpha (int symbol){
 
 
 int compare (int symbol){
-    if (isalpha(symbol) != 0 && lib_isalpha(symbol) != 0) {
+    if (isalpha(symbol) && lib_isalpha(symbol)) {
         printf("Результат функций одинаковый, символ является буквой алфавита (верхнего или нижнего регистра\n");
     } else if (isalpha(symbol) == 0 && lib_isalpha(symbol) == 0){
          printf("Результат функций одинаковый, символ не является буквой\n");
@@ -26,6 +26,6 @@ int compare (int symbol){
 
 
 int main() {
-    char symbol = 'm';
+    char symbol = 'l';
     compare(symbol);
 }
