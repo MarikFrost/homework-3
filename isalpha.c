@@ -6,7 +6,7 @@
 
 
 int lib_isalpha (int symbol){
-   if((symbol > 65 && symbol < 90) || (symbol > 97 && symbol < 122)){
+   if((symbol > 64 && symbol < 91) || (symbol > 96 && symbol < 123)){
         return 1;
     } else {
         return 0;
