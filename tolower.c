@@ -17,6 +17,8 @@ int lib_tolower (int symbol){
 void compare (int symbol){
     if (tolower(symbol) == lib_tolower(symbol)) {
         printf("Результат функций одинаковый\n");
+        printf("Результат tolower: %c\n", tolower(symbol));
+        printf("Результат lib_tolower: %c\n", lib_tolower(symbol));
     }
     else {
         printf("Ошибка, результат отличается\n");
@@ -25,7 +27,7 @@ void compare (int symbol){
 
 
 int main() {
-    char symbol = '5';
+    char symbol = 'T';
 
     compare(symbol);
     return 0;
