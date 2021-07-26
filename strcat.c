@@ -7,7 +7,7 @@
 /* Написаная функция strcat, берет строку и копирует ее*/
 char * lib_strcat(char * string_first, char * string_second){
   char *result = malloc(strlen(string_first) + strlen(string_second) + 1);
-  int i = 0;
+  int i = 1;
   while(string_first[i]) {
     result[i] = string_first[i];
     i++;
@@ -39,7 +39,9 @@ int compare (char * first_string, char * second_string){
         }
         i++;
     }
-    printf("Функции одинаковые\n");
+    printf("Функции одинаковые!!!\n");
+    printf("Результат strcat: %s\n", a);
+    printf("Результат lib_strcat: %s\n", b);
     free(a);
 }
 
