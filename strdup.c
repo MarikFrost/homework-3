@@ -26,14 +26,13 @@ int compare (char * first_string, char * second_string){
         }
         i++; 
     }
-  printf("Результат одинаковый");
+  printf("Результат одинаковый\n");
 }
 
 
 int main() {
   char *first_string = "Hello word";
   char *second_string;
-//  printf("%s\n", lib_strdup(first_string, second_string));
-compare(first_string, second_string);
+  compare(first_string, second_string);
   return 0;
 }
