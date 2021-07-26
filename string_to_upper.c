@@ -12,7 +12,9 @@ void string_to_upper (char * string){  //первод строки в верхн
         b[i] = toupper(string[i]);
         i++;
     }
-    printf("%s\n", b);
+    printf("Первод строки %s", string);
+    printf("в верхний регистр с помощью стандартной функции toupper.\n\n");
+    printf("Результат: %s\n", b);
     free (b);
 }
 
@@ -30,7 +32,9 @@ void my_string_to_upper (char * string){  // перевод строки в ве
         i++;
     }
     b[i] = '\0';
-    printf("%s\n", b);
+    printf("Первод строки %s", string);
+    printf("в верхний регистр без помощи стандартных функций.\n\n");
+    printf("Результат: %s\n", b);
     free(b);
 }
 
