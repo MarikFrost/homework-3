@@ -17,6 +17,8 @@ int lib_toupper (int symbol){
 void compare (int symbol){
     if (toupper(symbol) == lib_toupper(symbol)) {
         printf("Результат функций одинаковый\n");
+        printf("Результат toupper: %c\n", toupper(symbol));
+        printf("Результат lib_toupper: %c\n", lib_toupper(symbol));
     }
     else {
         printf("Ошибка, результат отличается\n");
