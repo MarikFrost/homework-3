@@ -8,7 +8,7 @@
 int lib_tolower (int symbol){
    if(symbol > 64 && symbol < 91){
         return symbol + 32;
-    } else {
+    } else { //возвращает то значение которое ввели, даже если это не число, так как это делает стандартная функция
         return symbol;
     }
 }
@@ -25,7 +25,7 @@ void compare (int symbol){
 
 
 int main() {
-    char symbol = 'Z';
+    char symbol = '5';
 
     compare(symbol);
     return 0;
