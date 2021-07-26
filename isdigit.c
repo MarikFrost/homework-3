@@ -14,7 +14,7 @@ int lib_isdigit (int symbol){
 }
 
 
-int compare (int symbol){
+void compare (int symbol){
     if (isdigit(symbol) && lib_isdigit(symbol)) {
         printf("Результат функций одинаковый, символ является десятичной цифрой\n");
     } else if (isdigit(symbol) == 0 && lib_isdigit(symbol) == 0) {
