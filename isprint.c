@@ -15,10 +15,14 @@ int lib_isprint(int symbol){
 
 
 void compare (int symbol){
-    if ((isprint(symbol) > 0 && lib_isprint(symbol) > 0) || (isprint(symbol) == 0 && lib_isprint(symbol) == 0)){
-        printf("Результат функций одинаковый\n");
+    if (isprint(symbol) > 0 && lib_isprint(symbol) > 0){
+        printf("Результат функций одинаковый!!!\n");
+        printf("Символ является печатным в таблице ASCII\n");
     }
-    else {
+    else if (isprint(symbol) == 0 && lib_isprint(symbol) == 0){
+        printf("Результат функций одинаковый!!!\n");
+        printf("Символ не является печатным в таблице ASCII\n");
+    } else {
         printf("Ошибка, результат отличается\n");
     }
 }
