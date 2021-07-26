@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 
-/* Написаная функция lib_strcpy, берет строку и копирует ее*/
+/* Написаная функция lib_strcpy*/
 char * lib_strcpy(char * str, char * str1){
     int i = 0;
     while (str1[i]) {
