@@ -23,13 +23,16 @@ int lib_strcmp(char * str, char * str1){
 
  /*Функция сравнивает выполнение lib_strcmp и strcmp */
 void compare (char * new_string, char * old_string){
-  if (lib_strcmp(new_string, old_string) == strcmp(new_string,old_string)) {
-    printf ("Функции работают одинаково\n");
+  if (lib_strcmp(new_string, old_string) > 0 && strcmp(new_string,old_string) > 0) {
+    printf ("Символ первой строки больше, функции работают одинаково!!!\n");
+  } else if (lib_strcmp(new_string, old_string) < 0 && strcmp(new_string,old_string) < 0){
+    printf ("Символ второй строки больше, функции работают одинаково!!!\n");
+  } else if (lib_strcmp(new_string, old_string) == 0 && strcmp(new_string,old_string) == 0){
+    printf ("Строки идентичны, функции работают одинаково!!!\n");
   } else {
-    printf("Есть отличие в работе функций:\n");
+    printf("Error!!!\n");
   }
 }
-
 
 
 int main(){
