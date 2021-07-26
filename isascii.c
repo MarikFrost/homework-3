@@ -6,7 +6,7 @@
 
 
 int lib_isascii (int symbol){
-   if(symbol > 0 && symbol < 177){
+   if(symbol > 0 && symbol < 127){
         return 1;
     } else {
         return 0;
